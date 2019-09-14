@@ -25,5 +25,12 @@ public class DetailDataActivity extends AppCompatActivity {
         etTglLahir.setFocusable(false);
         etJenkel.setFocusable(false);
         etAlamat.setFocusable(false);
+
+        PersonBean personBean = getIntent().getParcelableExtra("DETAIL_DATA");
+        etNomor.setText(String.valueOf(personBean.getNomor()));
+        etNama.setText(personBean.getNama());
+        etTglLahir.setText(personBean.getTgl_lahir());
+        etJenkel.setText(personBean.getJenkel());
+        etAlamat.setText(personBean.getAlamat());
     }
 }

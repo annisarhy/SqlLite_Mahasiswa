@@ -30,9 +30,12 @@ public class DataMahasiswaActivity extends AppCompatActivity implements Recycler
         setContentView(R.layout.activity_data_mahasiswa);
 
         context = this;
-        recyclerView= findViewById(R.id.recyclerview);
+        recyclerView = findViewById(R.id.recyclerview);
         layoutManager = new LinearLayoutManager(context);
         recyclerView.setLayoutManager(layoutManager);
+
+        setupRecyclerView();
+
         foradd = findViewById(R.id.ForAdd);
         foradd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,14 +45,14 @@ public class DataMahasiswaActivity extends AppCompatActivity implements Recycler
             }
         });
 
-        setupRecyclerView();
+
     }
 
     private void setupRecyclerView(){
         DatabaseHelper db = new DatabaseHelper(context);
         listPersonInfo = db.selectUserData();
 
-        RecyclerviewAdapter adapter = new RecyclerviewAdapter(context,listPersonInfo,this);
+        RecyclerviewAdapter adapter= new RecyclerviewAdapter(context,listPersonInfo,this);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
@@ -66,18 +69,18 @@ public class DataMahasiswaActivity extends AppCompatActivity implements Recycler
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 switch (i){
-                    case 1:
+                    case 0:
                         Intent detailData = new Intent(context,DetailDataActivity.class);
                         detailData.putExtra("DETAIL_DATA",personBean);
                         startActivity(detailData);
                         break;
-                    case 2:
+                    case 1:
                         Intent updateData = new Intent(context,InputUpdate.class);
                         updateData.putExtra("UPDATE_INTENT",personBean);
                         updateData.putExtra("UPDATE_ACTION","Update");
                         startActivity(updateData);
                         break;
-                    case 3:
+                    case 2:
                         DatabaseHelper db = new DatabaseHelper(context);
                         db.delete(personBean.getNomor());
                         setupRecyclerView();

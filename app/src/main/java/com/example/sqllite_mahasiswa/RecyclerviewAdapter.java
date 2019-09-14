@@ -41,7 +41,7 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerviewAdapter.UserViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
         final PersonBean currentPerson = listPersonInfo.get(position);
         holder.txtName.setText(currentPerson.getNama());
 
@@ -55,6 +55,7 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
 
     @Override
     public int getItemCount() {
+
         return listPersonInfo.size();
     }
 
