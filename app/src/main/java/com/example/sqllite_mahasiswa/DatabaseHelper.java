@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +39,7 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void  insert(PersonBean personBean){
+    public void insert(PersonBean personBean){
         SQLiteDatabase db =getWritableDatabase();
         ContentValues values=new ContentValues();
         values.put(KEY_NAMA,personBean.getNama());
@@ -92,5 +93,7 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
         String whereClause=KEY_NOMOR+"='"+personBean.getNomor()+"'";
         db.update(TABLE_NAME,values,whereClause,null);
     }
+
+
 }
 
