@@ -1,6 +1,7 @@
 package com.example.sqllite_mahasiswa;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Context;
 import android.content.Intent;
@@ -23,6 +24,10 @@ public class InputUpdate extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_input_update);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Data Mahasiswa");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         context = this;
 
         edtTextNomor = findViewById(R.id.edtTextNomor);
@@ -65,7 +70,7 @@ public class InputUpdate extends AppCompatActivity {
                     personBean.setJenkel(edtTextJenkel.getText().toString());
                     personBean.setAlamat(edtTextAlamat.getText().toString());
                     db.insert(personBean);
-                    Intent move = new Intent(context,MainActivity.class);
+                    Intent move = new Intent(context,DataMahasiswaActivity.class);
                     context.startActivity(move);
                 }
                 if (label.equals("Update")){
@@ -75,7 +80,7 @@ public class InputUpdate extends AppCompatActivity {
                     personBean.setJenkel(edtTextJenkel.getText().toString());
                     personBean.setAlamat(edtTextAlamat.getText().toString());
                     db.update(personBean);
-                    Intent move = new Intent(context,MainActivity.class);
+                    Intent move = new Intent(context,DataMahasiswaActivity.class);
                     context.startActivity(move);
                 }
             }

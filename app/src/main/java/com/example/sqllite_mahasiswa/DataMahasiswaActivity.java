@@ -2,6 +2,8 @@ package com.example.sqllite_mahasiswa;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -46,16 +48,21 @@ public class DataMahasiswaActivity extends AppCompatActivity implements Recycler
             }
         });
 
-
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Detail Data");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     private void setupRecyclerView(){
-        DatabaseHelper db = new DatabaseHelper(context);
+        DatabaseHelper db = new DatabaseHelper(this);
         listPersonInfo = db.selectUserData();
 
-        RecyclerviewAdapter adapter= new RecyclerviewAdapter(context,listPersonInfo,this);
+        RecyclerviewAdapter adapter= new RecyclerviewAdapter(this,listPersonInfo,this);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
+
+        recyclerView.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
 
     }
 

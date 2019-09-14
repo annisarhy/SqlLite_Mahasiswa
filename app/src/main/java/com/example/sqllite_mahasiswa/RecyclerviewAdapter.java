@@ -32,10 +32,9 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
 
     @NonNull
     @Override
-    public RecyclerviewAdapter.UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.mahasiswa_row_item,parent,false);
-        UserViewHolder userViewHolder = new UserViewHolder(view);
-
+    public UserViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.mahasiswa_row_item,parent,false);
+        UserViewHolder userViewHolder = new UserViewHolder(v);
 
         return userViewHolder;
     }

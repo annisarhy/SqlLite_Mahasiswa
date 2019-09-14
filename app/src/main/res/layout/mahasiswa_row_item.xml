@@ -19,10 +19,4 @@
             android:textSize="20sp"/>
 
     </LinearLayout>
-    <View
-        android:layout_height="1dp"
-        android:layout_width="match_parent"
-        android:background="#90909090"
-        android:layout_marginBottom="5dp"
-        android:layout_marginTop="5dp" />
 </LinearLayout>

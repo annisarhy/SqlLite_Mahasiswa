@@ -1,10 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Informasi"
+    android:orientation="vertical"
     android:background="@color/colorBackground">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFCE3B"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        android:layout_margin="10dp"
+        >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/picAnnisa"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/annisa"
+            />
+        <TextView
+            android:id="@+id/txtNamaAnnisa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Annisa Rahayu"
+            android:textSize="20dp"
+            android:layout_toRightOf="@+id/picAnnisa"
+            android:layout_marginTop="8dp"/>
+        <TextView
+            android:id="@+id/txtKelasAnnisa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="XII RPL 1"
+            android:textSize="20dp"
+            android:layout_toRightOf="@+id/picAnnisa"
+            android:layout_below="@+id/txtNamaAnnisa"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="04"
+            android:textSize="20dp"
+            android:layout_toRightOf="@+id/picAnnisa"
+            android:layout_below="@+id/txtKelasAnnisa"/>
+
+    </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        android:layout_margin="10dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/picFajar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/fajar"/>
+            <TextView
+                android:id="@+id/txtNamaFajar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fajar Faturrahman"
+                android:textSize="20dp"
+                android:layout_toRightOf="@+id/picFajar"
+                android:layout_marginTop="8dp"/>
+            <TextView
+                android:id="@+id/txtKelasFajar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="XII RPL 1"
+                android:textSize="20dp"
+                android:layout_toRightOf="@+id/picFajar"
+                android:layout_below="@+id/txtNamaFajar"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="08"
+                android:textSize="20dp"
+                android:layout_toRightOf="@+id/picFajar"
+                android:layout_below="@+id/txtKelasFajar"/>
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

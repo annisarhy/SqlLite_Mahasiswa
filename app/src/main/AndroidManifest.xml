@@ -16,10 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Informasi" />
-        <activity android:name=".InputUpdate" />
-        <activity android:name=".DetailDataActivity" />
-        <activity android:name=".DataMahasiswaActivity" />
+        <activity android:name=".Informasi"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity android:name=".InputUpdate"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity android:name=".DetailDataActivity"
+            android:parentActivityName=".MainActivity">
+        </activity>
+        <activity android:name=".DataMahasiswaActivity"
+            android:parentActivityName=".MainActivity">
+        </activity>
         <activity android:name=".MainActivity">
 
         </activity>

@@ -1,6 +1,7 @@
 package com.example.sqllite_mahasiswa;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.os.Bundle;
 import android.widget.EditText;
@@ -13,6 +14,10 @@ public class DetailDataActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_data);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("Data Mahasiswa");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         etNomor = findViewById(R.id.edtTextNomor);
         etNama = findViewById(R.id.edtTextNama);
@@ -33,4 +38,6 @@ public class DetailDataActivity extends AppCompatActivity {
         etJenkel.setText(personBean.getJenkel());
         etAlamat.setText(personBean.getAlamat());
     }
+
 }
+
