@@ -6,17 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".InputUpdate"
     android:background="@color/colorBackground">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:alpha="0.7"
+            android:src="@drawable/student"
+            android:scaleType="centerCrop" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:background="#000"
+            android:alpha="0.7"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
+        android:layout_width="53dp"
         android:layout_height="wrap_content"
-        android:background="#FFCE3B"
+        android:background="@drawable/gradient"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data Mahasiswa"
+        android:textColor="#FFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/Linear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4" />
 
     <LinearLayout
         app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintVertical_bias="0"
+        app:layout_constraintVertical_bias="0.1"
         android:id="@+id/Linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,21 +67,23 @@
             android:orientation="vertical"
             android:paddingLeft="20dp"
             android:paddingRight="20dp">
-
+            <TextView
+                android:textColor="#FFF"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:text="Nomor"
+                android:textStyle="bold" />
             <EditText
+                android:background="@drawable/outlinetext"
+                android:textColor="#FFF"
+                android:textColorHint="#FFF"
                 android:id="@+id/edtTextNomor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_create_black_24dp"
                 android:drawablePadding="10dp"
                 android:hint="Masukan Nomer" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingBottom="10dp"
-                android:text="Nomor"
-                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -55,22 +92,25 @@
             android:orientation="vertical"
             android:paddingLeft="20dp"
             android:paddingRight="20dp">
-
-            <EditText
-                android:id="@+id/edtTextNama"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_group_black_24dp"
-                android:drawablePadding="10dp"
-                android:hint="Masukan nama lengkap" />
-
             <TextView
+                android:textColor="#FFF"
+                android:textColorHint="#FFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 android:text="Nama"
                 android:textStyle="bold" />
+            <EditText
+                android:background="@drawable/outlinetext"
+                android:textColor="#FFF"
+                android:textColorHint="#FFF"
+                android:id="@+id/edtTextNama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_group_black_24dp"
+                android:drawablePadding="10dp"
+                android:hint="Masukan nama lengkap" />
         </LinearLayout>
 
         <LinearLayout
@@ -79,22 +119,24 @@
             android:orientation="vertical"
             android:paddingLeft="20dp"
             android:paddingRight="20dp">
-
-            <EditText
-                android:id="@+id/edtTextTglLahir"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_date_range_black_24dp"
-                android:drawablePadding="10dp"
-                android:hint="20/02/2002" />
-
             <TextView
+                android:textColor="#FFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 android:text="Tanggal lahir"
                 android:textStyle="bold" />
+            <EditText
+                android:background="@drawable/outlinetext"
+                android:textColor="#FFF"
+                android:textColorHint="#FFF"
+                android:id="@+id/edtTextTglLahir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_date_range_black_24dp"
+                android:drawablePadding="10dp"
+                android:hint="20/02/2002" />
         </LinearLayout>
 
         <LinearLayout
@@ -103,22 +145,24 @@
             android:orientation="vertical"
             android:paddingLeft="20dp"
             android:paddingRight="20dp">
-
-            <EditText
-                android:id="@+id/edtTextJenkel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_person_black_24dp"
-                android:drawablePadding="10dp"
-                android:hint="P Atau L" />
-
             <TextView
+                android:textColor="#FFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 android:text="Jenis Kelamin"
                 android:textStyle="bold" />
+            <EditText
+                android:background="@drawable/outlinetext"
+                android:textColor="#FFF"
+                android:textColorHint="#FFF"
+                android:id="@+id/edtTextJenkel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_person_black_24dp"
+                android:drawablePadding="10dp"
+                android:hint="P Atau L" />
         </LinearLayout>
 
         <LinearLayout
@@ -127,22 +171,24 @@
             android:orientation="vertical"
             android:paddingLeft="20dp"
             android:paddingRight="20dp">
-
-            <EditText
-                android:id="@+id/edtTextAlamat"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/ic_place_black_24dp"
-                android:drawablePadding="10dp"
-                android:hint="Masukan alamat" />
-
             <TextView
+                android:textColor="#FFF"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
                 android:text="Alamat"
                 android:textStyle="bold" />
+            <EditText
+                android:background="@drawable/outlinetext"
+                android:textColor="#FFF"
+                android:textColorHint="#FFF"
+                android:id="@+id/edtTextAlamat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_place_black_24dp"
+                android:drawablePadding="10dp"
+                android:hint="Masukan alamat" />
         </LinearLayout>
     </LinearLayout>
 
@@ -150,7 +196,8 @@
         android:id="@+id/btnSimpan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="?android:attr/selectableItemBackground"
+        android:padding="10dp"
+        android:background="@drawable/background"
         android:drawableLeft="@drawable/ic_save_black_24dp"
         android:text="Simpan"
         android:textColor="#FF0000"

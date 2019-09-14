@@ -50,7 +50,6 @@ public class DataMahasiswaActivity extends AppCompatActivity implements Recycler
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Detail Data");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 

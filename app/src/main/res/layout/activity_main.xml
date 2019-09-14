@@ -7,7 +7,25 @@
     tools:context=".MainActivity"
     android:id="@+id/framecontainer"
     android:background="@color/colorBackground">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:alpha="0.7"
+            android:src="@drawable/student"
+            android:scaleType="centerCrop" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:background="#000"
+            android:alpha="0.7"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
     <ImageView
         android:id="@+id/imageviewIcon"
         android:layout_width="wrap_content"
@@ -29,9 +47,11 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageviewIcon"
-        app:layout_constraintVertical_bias="0.126">
+        app:layout_constraintVertical_bias="0.061">
+
         <LinearLayout
-            android:layout_width="200dp"
+            android:padding="20dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/stylebutton1"
@@ -52,13 +72,15 @@
                 android:text="LIHAT DATA"
                 android:textAlignment="center"
                 android:textColor="#fff"
-                android:textSize="20sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
         </LinearLayout>
+
         <LinearLayout
-            android:layout_width="200dp"
+            android:padding="20dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/stylebutton2"
             android:gravity="center"
             android:onClick="inputdata"
@@ -77,14 +99,15 @@
                 android:text="INPUT DATA"
                 android:textAlignment="center"
                 android:textColor="#fff"
-                android:textSize="20sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="200dp"
+            android:padding="20dp"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/stylebutton3"
             android:gravity="center"
             android:onClick="informasi"
@@ -103,7 +126,7 @@
                 android:text="INFORMASI"
                 android:textAlignment="center"
                 android:textColor="#fff"
-                android:textSize="20sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
         </LinearLayout>
 

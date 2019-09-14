@@ -16,7 +16,6 @@ public class DetailDataActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_data);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Data Mahasiswa");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         etNomor = findViewById(R.id.edtTextNomor);

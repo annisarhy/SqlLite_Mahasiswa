@@ -26,7 +26,6 @@ public class InputUpdate extends AppCompatActivity {
         setContentView(R.layout.activity_input_update);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Data Mahasiswa");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         context = this;
 

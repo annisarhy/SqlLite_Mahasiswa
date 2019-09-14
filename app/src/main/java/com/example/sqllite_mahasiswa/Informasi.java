@@ -13,7 +13,6 @@ public class Informasi extends AppCompatActivity {
         setContentView(R.layout.activity_informasi);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Team");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }
