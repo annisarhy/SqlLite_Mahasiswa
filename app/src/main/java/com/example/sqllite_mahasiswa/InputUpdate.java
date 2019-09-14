@@ -16,8 +16,7 @@ public class InputUpdate extends AppCompatActivity {
     EditText edtTextNomor, edtTextNama, edtTextTglLahir, edtTextJenkel, edtTextAlamat;
     Context context;
     Button btnSimpan;
-    DatabaseHelper editdata;
-    String nama, tgl_lahir, nomor, jenkel, alamat, submit;
+    String  nomor = "Submit", submit;
     PersonBean update;
 
     @Override
@@ -31,6 +30,8 @@ public class InputUpdate extends AppCompatActivity {
         edtTextJenkel = findViewById(R.id.edtTextJenkel);
         edtTextTglLahir = findViewById(R.id.edtTextTglLahir);
         edtTextAlamat = findViewById(R.id.edtTextAlamat);
+
+        btnSimpan = findViewById(R.id.btnSimpan);
 
         submit = getIntent().getStringExtra("UPDATE_ACTION");
         update = getIntent().getParcelableExtra("UPDATE_INTENT");
