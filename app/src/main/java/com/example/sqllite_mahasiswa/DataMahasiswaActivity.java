@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -22,7 +23,7 @@ public class DataMahasiswaActivity extends AppCompatActivity implements Recycler
     RecyclerView.LayoutManager layoutManager;
     Context context;
     List<PersonBean> listPersonInfo;
-    LinearLayout foradd;
+    TextView foradd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,7 @@ public class DataMahasiswaActivity extends AppCompatActivity implements Recycler
 
         setupRecyclerView();
 
-        foradd = findViewById(R.id.ForAdd);
+        foradd = findViewById(R.id.add);
         foradd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
