@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/ic_create_black_24dp"
                 android:drawablePadding="10dp"
-                android:hint="Masukan nomer telepon" />
+                android:hint="Masukan Nomer" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"

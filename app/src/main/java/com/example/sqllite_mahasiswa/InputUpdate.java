@@ -65,7 +65,7 @@ public class InputUpdate extends AppCompatActivity {
                     personBean.setJenkel(edtTextJenkel.getText().toString());
                     personBean.setAlamat(edtTextAlamat.getText().toString());
                     db.insert(personBean);
-                    Intent move = new Intent(context,MainActivity.class);
+                    Intent move = new Intent(context,DataMahasiswaActivity.class);
                     context.startActivity(move);
                 }
                 if (label.equals("Update")){
@@ -75,7 +75,7 @@ public class InputUpdate extends AppCompatActivity {
                     personBean.setJenkel(edtTextJenkel.getText().toString());
                     personBean.setAlamat(edtTextAlamat.getText().toString());
                     db.update(personBean);
-                    Intent move = new Intent(context,MainActivity.class);
+                    Intent move = new Intent(context,DataMahasiswaActivity.class);
                     context.startActivity(move);
                 }
             }
