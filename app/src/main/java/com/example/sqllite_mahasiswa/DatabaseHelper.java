@@ -61,11 +61,11 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
         Cursor c =db.query(TABLE_NAME,columns,null,null,null,null,null);
 
         while (c.moveToNext()){
-            int nomor=c.getInt(1);
-            String nama=c.getString(0);
-            String jenkel=c.getString(0);
-            String tanggal=c.getString(0);
-            String alamat=c.getString(0);
+            int nomor=c.getInt(0);
+            String nama=c.getString(1);
+            String jenkel=c.getString(3);
+            String tanggal=c.getString(2);
+            String alamat=c.getString(4);
 
             PersonBean personBean=new PersonBean();
             personBean.setNomor(nomor);
