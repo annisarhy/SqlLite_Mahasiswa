@@ -14,18 +14,18 @@ import java.util.List;
 public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapter.UserViewHolder> {
 
     Context context;
-    OnUserClickListener Listener;
+    OnUserActionListener Listener;
     List<PersonBean> listPersonInfo;
 
 
-    public RecyclerviewAdapter(Context context, List<PersonBean> listPersonInfo, OnUserClickListener listener){
+    public RecyclerviewAdapter(Context context, List<PersonBean> listPersonInfo, OnUserActionListener listener){
         this.context = context;
         this.listPersonInfo = listPersonInfo;
         this.Listener = listener;
     }
 
-    public interface OnUserClickListener{
-        void onUserClick(PersonBean currentPerson, String action);
+    public interface OnUserActionListener{
+        void onUserAction(PersonBean personBean);
     }
 
 
@@ -41,13 +41,21 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerviewAdapter.UserViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
         final PersonBean currentPerson = listPersonInfo.get(position);
         holder.txtName.setText(currentPerson.getNama());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Listener.onUserAction(currentPerson);
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
+
         return listPersonInfo.size();
     }
 
