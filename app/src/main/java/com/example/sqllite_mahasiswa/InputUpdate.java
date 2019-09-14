@@ -55,25 +55,25 @@ public class InputUpdate extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 DatabaseHelper db = new DatabaseHelper(context);
-                PersonBean data = new PersonBean();
+                PersonBean personBean = new PersonBean();
                 String label = btnSimpan.getText().toString();
                 if (label.equals("Simpan")){
-                    data.setNomor(Integer.parseInt(edtTextNomor.getText().toString()));
-                    data.setNama(edtTextNama.getText().toString());
-                    data.setTgl_lahir(edtTextTglLahir.getText().toString());
-                    data.setJenkel(edtTextJenkel.getText().toString());
-                    data.setAlamat(edtTextAlamat.getText().toString());
-                    db.insert(data);
+                    personBean.setNomor(Integer.parseInt(edtTextNomor.getText().toString()));
+                    personBean.setNama(edtTextNama.getText().toString());
+                    personBean.setTgl_lahir(edtTextTglLahir.getText().toString());
+                    personBean.setJenkel(edtTextJenkel.getText().toString());
+                    personBean.setAlamat(edtTextAlamat.getText().toString());
+                    db.insert(personBean);
                     Intent move = new Intent(context,MainActivity.class);
                     context.startActivity(move);
                 }
                 if (label.equals("Update")){
-                    data.setNomor(Integer.parseInt(edtTextNomor.getText().toString()));
-                    data.setNama(edtTextNama.getText().toString());
-                    data.setTgl_lahir(edtTextTglLahir.getText().toString());
-                    data.setJenkel(edtTextJenkel.getText().toString());
-                    data.setAlamat(edtTextAlamat.getText().toString());
-                    db.update(data);
+                    personBean.setNomor(Integer.parseInt(edtTextNomor.getText().toString()));
+                    personBean.setNama(edtTextNama.getText().toString());
+                    personBean.setTgl_lahir(edtTextTglLahir.getText().toString());
+                    personBean.setJenkel(edtTextJenkel.getText().toString());
+                    personBean.setAlamat(edtTextAlamat.getText().toString());
+                    db.update(personBean);
                     Intent move = new Intent(context,MainActivity.class);
                     context.startActivity(move);
                 }
