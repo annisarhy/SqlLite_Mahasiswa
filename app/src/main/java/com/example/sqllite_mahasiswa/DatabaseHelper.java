@@ -15,11 +15,12 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
     private  static  final int DB_VERSION=1;
     private  static  final String DB_NAME="UserInfo";
     private  static  final String TABLE_NAME="tbl_user";
+    private  static  final String KEY_NOMOR="nomor";
     private  static  final String KEY_NAMA="nama";
     private  static  final String KEY_TANGGAL="tgl_lahir";
     private  static  final String KEY_JENKEL="jenkel";
     private  static  final String KEY_ALAMAT="alamat";
-    private  static  final String KEY_NOMOR="nomor";
+
 
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -42,8 +43,8 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
     public void insert(PersonBean personBean){
         SQLiteDatabase db =getWritableDatabase();
         ContentValues values=new ContentValues();
-        values.put(KEY_NAMA,personBean.getNama());
         values.put(KEY_NOMOR,personBean.getNomor());
+        values.put(KEY_NAMA,personBean.getNama());
         values.put(KEY_TANGGAL,personBean.getTgl_lahir());
         values.put(KEY_JENKEL,personBean.getJenkel());
         values.put(KEY_ALAMAT,personBean.getAlamat());
@@ -60,18 +61,19 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
         Cursor c =db.query(TABLE_NAME,columns,null,null,null,null,null);
 
         while (c.moveToNext()){
+            int nomor=c.getInt(1);
             String nama=c.getString(0);
             String jenkel=c.getString(0);
             String tanggal=c.getString(0);
             String alamat=c.getString(0);
-            int nomor=c.getInt(1);
 
             PersonBean personBean=new PersonBean();
-            personBean.setNama(nama);
             personBean.setNomor(nomor);
+            personBean.setNama(nama);
             personBean.setTgl_lahir(tanggal);
-            personBean.setAlamat(alamat);
             personBean.setJenkel(jenkel);
+            personBean.setAlamat(alamat);
+
             userList.add(personBean);         }
 
         return  userList;
@@ -87,13 +89,12 @@ public class DatabaseHelper  extends SQLiteOpenHelper {
         SQLiteDatabase db=getReadableDatabase();
         ContentValues values=new ContentValues();
         values.put(KEY_NAMA,personBean.getNama());
-        values.put(KEY_ALAMAT,personBean.getAlamat());
-        values.put(KEY_JENKEL,personBean.getJenkel());
         values.put(KEY_TANGGAL,personBean.getTgl_lahir());
+        values.put(KEY_JENKEL,personBean.getJenkel());
+        values.put(KEY_ALAMAT,personBean.getAlamat());
+
         String whereClause=KEY_NOMOR+"='"+personBean.getNomor()+"'";
         db.update(TABLE_NAME,values,whereClause,null);
     }
-
-
 }
 
