@@ -16,8 +16,7 @@ public class InputUpdate extends AppCompatActivity {
     EditText edtTextNomor, edtTextNama, edtTextTglLahir, edtTextJenkel, edtTextAlamat;
     Context context;
     Button btnSimpan;
-    DatabaseHelper editdata;
-    String nama, tgl_lahir, nomor, jenkel, alamat, submit;
+    String  nomor = "Submit", submit;
     PersonBean update;
 
     @Override
@@ -26,6 +25,14 @@ public class InputUpdate extends AppCompatActivity {
         setContentView(R.layout.activity_input_update);
         context = this;
 
+        edtTextNomor = findViewById(R.id.edtTextNomor);
+        edtTextNama = findViewById(R.id.edtTextNama);
+        edtTextJenkel = findViewById(R.id.edtTextJenkel);
+        edtTextTglLahir = findViewById(R.id.edtTextTglLahir);
+        edtTextAlamat = findViewById(R.id.edtTextAlamat);
+
+        btnSimpan = findViewById(R.id.btnSimpan);
+
         submit = getIntent().getStringExtra("UPDATE_ACTION");
         update = getIntent().getParcelableExtra("UPDATE_INTENT");
         if (submit == null) {
@@ -33,15 +40,6 @@ public class InputUpdate extends AppCompatActivity {
         } else {
             nomor = String.valueOf(update.getNomor());
         }
-
-        edtTextNomor = findViewById(R.id.edtTextNomor);
-        edtTextNama = findViewById(R.id.edtTextNama);
-        edtTextJenkel = findViewById(R.id.edtTextJenkel);
-        edtTextTglLahir = findViewById(R.id.edtTextTglLahir);
-        edtTextAlamat = findViewById(R.id.edtTextAlamat);
-        btnSimpan = findViewById(R.id.btnSimpan);
-
-
 
         if (submit.equals("Update")){
             btnSimpan.setText("Update");
@@ -67,7 +65,7 @@ public class InputUpdate extends AppCompatActivity {
                     personBean.setJenkel(edtTextJenkel.getText().toString());
                     personBean.setAlamat(edtTextAlamat.getText().toString());
                     db.insert(personBean);
-                    Intent move = new Intent(context,DataMahasiswaActivity.class);
+                    Intent move = new Intent(context,MainActivity.class);
                     context.startActivity(move);
                 }
                 if (label.equals("Update")){
@@ -77,7 +75,7 @@ public class InputUpdate extends AppCompatActivity {
                     personBean.setJenkel(edtTextJenkel.getText().toString());
                     personBean.setAlamat(edtTextAlamat.getText().toString());
                     db.update(personBean);
-                    Intent move = new Intent(context,DataMahasiswaActivity.class);
+                    Intent move = new Intent(context,MainActivity.class);
                     context.startActivity(move);
                 }
             }
